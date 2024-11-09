@@ -11,5 +11,6 @@ declare module 'vue' {
     ARow: typeof import('ant-design-vue/es')['Row']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    UseForm: typeof import('./src/components/basics-form/useForm.vue')['default']
   }
 }
