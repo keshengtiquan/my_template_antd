@@ -7,8 +7,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AButton: typeof import('ant-design-vue/es')['Button']
     ACol: typeof import('ant-design-vue/es')['Col']
+    AForm: typeof import('ant-design-vue/es')['Form']
+    AFormItem: typeof import('ant-design-vue/es')['FormItem']
+    AInput: typeof import('ant-design-vue/es')['Input']
     ARow: typeof import('ant-design-vue/es')['Row']
+    BasicsComponent: typeof import('./src/components/basics-form/component/basicsComponent.vue')['default']
+    Component: typeof import('./src/components/basics-form/component/component.vue')['default']
+    FormItem: typeof import('./src/components/basics-form/component/form-item.vue')['default']
+    RenderComponent: typeof import('./src/components/basics-form/component/renderComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UseForm: typeof import('./src/components/basics-form/useForm.vue')['default']
