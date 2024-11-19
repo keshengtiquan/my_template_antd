@@ -5,13 +5,22 @@ const routes: RouteRecordRaw[] = [
   {
     component: Layout,
     meta: {
-      icon: "",
-      order: 9999,
-      title: "工作台"
+      icon: "lucide:layout-dashboard",
+      title: "概览"
     },
     name: "Dashboard",
     path: "/",
     children: [
+      {
+        name: "Analyze",
+        path: "/analyze",
+        component: () => import("@/view/dashboard/dashboard.vue"),
+        meta: {
+          affixTab: false,
+          icon: "lucide:a-arrow-up",
+          title: "分析页"
+        }
+      },
       {
         name: "Workspace",
         path: "/workspace",

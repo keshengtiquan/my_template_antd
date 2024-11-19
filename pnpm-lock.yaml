@@ -27,6 +27,12 @@ importers:
         specifier: ^4.4.5
         version: 4.4.5(vue@3.5.12(typescript@5.6.3))
     devDependencies:
+      '@iconify-json/ant-design':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify/vue':
+        specifier: ^4.1.2
+        version: 4.1.2(vue@3.5.12(typescript@5.6.3))
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
@@ -300,6 +306,17 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/ant-design@1.2.2':
+    resolution: {integrity: sha512-/jE53ePZZSAQUGPgnRgm7y2l0N/Z814AzaEpdD3W1Magzx+Q1/VhW5eRdF6XewoOYlPoUCkDvdgMCSjs9XefEA==, tarball: https://registry.npmmirror.com/@iconify-json/ant-design/-/ant-design-1.2.2.tgz}
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==, tarball: https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz}
+
+  '@iconify/vue@4.1.2':
+    resolution: {integrity: sha512-CQnYqLiQD5LOAaXhBrmj1mdL2/NCJvwcC4jtW2Z8ukhThiFkLDkutarTOV2trfc9EXqUqRs0KqXOL9pZ/IyysA==, tarball: https://registry.npmmirror.com/@iconify/vue/-/vue-4.1.2.tgz}
+    peerDependencies:
+      vue: '>=3'
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==, tarball: https://registry.npmmirror.com/@isaacs/cliui/-/cliui-8.0.2.tgz}
@@ -1670,6 +1687,17 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@iconify-json/ant-design@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify/types@2.0.0': {}
+
+  '@iconify/vue@4.1.2(vue@3.5.12(typescript@5.6.3))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.5.12(typescript@5.6.3)
 
   '@isaacs/cliui@8.0.2':
     dependencies:

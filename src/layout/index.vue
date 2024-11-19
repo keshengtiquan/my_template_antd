@@ -1,7 +1,5 @@
 <template>
-  <div>
     <BasicsLayout />
-  </div>
 </template>
 
 <script setup lang="ts">

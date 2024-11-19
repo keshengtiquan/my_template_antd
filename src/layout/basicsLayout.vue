@@ -1,7 +1,9 @@
 <template>
-  <div class="flex">
+  <div class="flex h-full">
     <Sidebar />
-    <Header />
+    <div class="flex-1">
+      <Header />
+    </div>
   </div>
 </template>
 

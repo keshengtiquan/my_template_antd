@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 import { routes } from "./routes"
 
-console.log(routes)
+
 /**
  *  @zh_CN 创建vue-router实例
  */
