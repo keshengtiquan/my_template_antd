@@ -1,0 +1,7 @@
+:root {
+    --header-height: 50px;
+    --header-border-color: #e0e0e3;
+    --sidebar-width: 230px;
+    --menu-border-color: rgba(5, 5, 5, 0.06);
+    --hover-bg: #f4f4f5;
+}

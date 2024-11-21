@@ -1,20 +1,19 @@
 <template>
-  <Icon :icon="icon" :width="width" :height="height" v-bind="$attrs" />
+  <Icon :icon="icon" :width="size" :height="size" v-bind="$attrs" />
 </template>
 
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import { Icon } from "@iconify/vue"
 
-withDefaults(defineProps<{
-  icon: string,
-  width?: number,
-  height?: number
-}>(), {
-  width: 16,
-  height: 16
-})
+withDefaults(
+  defineProps<{
+    icon: string
+    size?: number
+  }>(),
+  {
+    size: 16
+  }
+)
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
