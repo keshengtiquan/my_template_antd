@@ -9,7 +9,8 @@ const routes: RouteRecordRaw[] = [
       title: "概览"
     },
     name: "Dashboard",
-    path: "/",
+    path: "/main",
+    redirect: "/analyze",
     children: [
       {
         name: "Analyze",

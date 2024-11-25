@@ -12,3 +12,40 @@
     opacity: 0;
     transform: translateX(30px) skewX(-30deg);
 }
+
+/* 对话框滑动动画 */
+.slide-enter-active {
+    transition:
+            transform 0.3s,
+            opacity 0.3s;
+}
+.slide-leave-active {
+    transition:
+            transform 0.2s,
+            opacity 0.15s; /* 缩短关闭动画时间 */
+}
+.slide-enter-from {
+    transform: translateY(-20%);
+    opacity: 0;
+}
+.slide-enter-to {
+    transform: translateY(0);
+    opacity: 1;
+}
+.slide-leave-from {
+    transform: translateY(0);
+    opacity: 1;
+}
+.slide-leave-to {
+    transform: translateY(-20%);
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

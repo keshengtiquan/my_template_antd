@@ -10,6 +10,7 @@ declare module 'vue' {
     ABreadcrumb: typeof import('ant-design-vue/es')['Breadcrumb']
     ABreadcrumbItem: typeof import('ant-design-vue/es')['BreadcrumbItem']
     AButton: typeof import('ant-design-vue/es')['Button']
+    AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
     AForm: typeof import('ant-design-vue/es')['Form']
     AFormItem: typeof import('ant-design-vue/es')['FormItem']
     AMenu: typeof import('ant-design-vue/es')['Menu']
@@ -17,6 +18,7 @@ declare module 'vue' {
     RenderComponent: typeof import('./src/components/basics-form/component/renderComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchDialog: typeof import('./src/components/search-dialog/index.vue')['default']
     UseForm: typeof import('./src/components/basics-form/useForm.vue')['default']
   }
 }

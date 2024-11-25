@@ -1,33 +1,35 @@
-import { ConfigEnv, loadEnv, UserConfigExport } from "vite";
-import vue from "@vitejs/plugin-vue";
-import { resolve } from "path";
-import Components from "unplugin-vue-components/vite";
-import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
-
+import { ConfigEnv, loadEnv, UserConfigExport } from "vite"
+import vue from "@vitejs/plugin-vue"
+import { resolve } from "path"
+import Components from "unplugin-vue-components/vite"
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
+import CreatePlugins from "./src/config/plugins/index.ts"
 // https://vite.dev/config/
 export default ({ mode }: ConfigEnv): UserConfigExport => {
-  const viteEnv = loadEnv(mode, process.cwd());
-  const { VITE_PUBLIC_PATH, VITE_PORT } = viteEnv;
+  const viteEnv = loadEnv(mode, process.cwd())
+  const { VITE_PUBLIC_PATH, VITE_PORT } = viteEnv
+  console.log(VITE_PORT)
   return {
     base: VITE_PUBLIC_PATH,
     resolve: {
       alias: {
-        "@": resolve(__dirname, "./src"),
-      },
+        "@": resolve(__dirname, "./src")
+      }
     },
     server: {
       port: Number(VITE_PORT),
-      proxy: {},
+      proxy: {}
     },
     plugins: [
       vue(),
       Components({
         resolvers: [
           AntDesignVueResolver({
-            importStyle: false, // css in js
-          }),
-        ],
+            importStyle: false // css in js
+          })
+        ]
       }),
+      ...CreatePlugins(viteEnv)
     ],
     build: {
       /** 单个 chunk 文件的大小超过 2048KB 时发出警告 */
@@ -44,10 +46,10 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
            * 2. 如果你不想自定义 chunk 分割策略，可以直接移除这段配置
            */
           manualChunks: {
-            vue: ["vue", "vue-router", "pinia"],
-          },
-        },
-      },
-    },
-  };
-};
+            vue: ["vue", "vue-router", "pinia"]
+          }
+        }
+      }
+    }
+  }
+}
