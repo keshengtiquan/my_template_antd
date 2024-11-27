@@ -5,7 +5,7 @@ const routes: RouteRecordRaw[] = [
   {
     component: Layout,
     meta: {
-      icon: "",
+      icon: "lucide:layout-dashboard",
       title: "测试"
     },
     name: "Test",
@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import("@/view/dashboard/dashboard.vue"),
         meta: {
           affixTab: false,
-          icon: "",
+          icon: "lucide:layout-dashboard",
           title: "测试1"
         }
       },
@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import("@/view/dashboard/dashboard.vue"),
         meta: {
           affixTab: true,
-          icon: "",
+          icon: "lucide:layout-dashboard",
           title: "测试2"
         }
       }

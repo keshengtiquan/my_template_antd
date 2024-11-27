@@ -1,14 +1,17 @@
 <template>
-  <a-breadcrumb class="flex-center mt-[-3px]">
+  <div class="flex-center mt-[-3px] cursor-pointer">
     <transition-group name="breadcrumb-transition" tag="a-breadcrumb" class="flex-center">
-      <a-breadcrumb-item class="flex-center" v-for="route in data" :key="route.path" :href="route.path">
-        <div class="flex-center">
-          <IconifyIcon :icon="route.meta.icon as string" class="mb-[-0.15em]" />
+      <div class="flex-center" v-for="(route, index) in data" :key="route.path" :href="route.path">
+        <div class="transition-colors text-sm flex-center text-[var(--foreground)] hover:text-[var(--foreground-50)]">
+          <IconifyIcon :icon="route.meta.icon as string" class="mb-[-0.10em]" />
           <div class="ml-1">{{ route.meta.title }}</div>
         </div>
-      </a-breadcrumb-item>
+        <div class="text-[var(--foreground)] px-2" v-if="index != data.length - 1">
+          <IconifyIcon icon="lucide:chevron-right" />
+        </div>
+      </div>
     </transition-group>
-  </a-breadcrumb>
+  </div>
 </template>
 
 <script setup lang="ts">

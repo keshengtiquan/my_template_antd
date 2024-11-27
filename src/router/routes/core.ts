@@ -19,6 +19,11 @@ const coreRoutes: RouteRecordRaw[] = [
     meta: {
       title: "登录页"
     }
+  },
+  {
+    path: "/redirect/:path(.*)",
+    name: "RedirectPath",
+    component: () => import("@/view/common/redirect.vue")
   }
 ]
 

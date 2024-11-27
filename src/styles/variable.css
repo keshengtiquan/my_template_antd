@@ -9,13 +9,13 @@
     --foreground: #71717a;
     --foreground-50: #323639;
     --bg-white: #ffffff;
-    --main-bg: #fff;
+    --main-bg: #f1f3f6;
     --icon-color: #56595b;
     --icon-hover: #18181b;
 }
 
 :root.dark {
-    --bg-color: #1c1e23;
+    --bg-color: #1d1d22;
     --hover-bg: #2e3033;
     --header-border-color: #36363a;
     --menu-border-color: #36363a;
@@ -24,3 +24,6 @@
     --icon-hover: #fafafa;
     --foreground-50: #f2f2f2;
 }
+
+
+

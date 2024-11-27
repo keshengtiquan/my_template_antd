@@ -7,6 +7,7 @@
         <IconifyIcon icon="icon-park-outline:hamburger-button" :size="18" />
       </div>
       <div
+        @click="handleRefresh"
         class="text-[var(--icon-color)] hover:text-[var(--icon-hover)] rounded-[6px] px-1 w-8 h-8 flex justify-center items-center mr-1 cursor-pointer hover:bg-[var(--hover-bg)] transition-colors"
       >
         <IconifyIcon icon="material-symbols:refresh" :size="18" />
@@ -31,6 +32,14 @@ import Search from "@/layout/components/search.vue"
 import Setting from "@/layout/components/setting.vue"
 import Dark from "@/layout/components/dark.vue"
 import Fullscreen from "@/layout/components/fullscreen.vue"
+import { useRoute, useRouter } from "vue-router"
+const router = useRouter()
+const route = useRoute()
+const handleRefresh = () => {
+  console.log(route)
+
+  router.replace(`/redirect/${encodeURIComponent(route.fullPath)}`)
+}
 </script>
 
 <style scoped>

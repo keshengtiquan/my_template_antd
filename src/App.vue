@@ -9,6 +9,13 @@ const antdLocale = ref<Locale>(antdDefaultLocale)
 
 const tokenTheme = computed(() => {
   const algorithm = isDark.value ? [theme.darkAlgorithm] : [theme.defaultAlgorithm]
+  const token = isDark.value
+    ? {
+        // colorBgBase: "#08090a"
+        // colorBgBase: "#090a0b"
+        colorBgBase: "#0a0a0c"
+      }
+    : {}
 
   // antd 紧凑模式算法
   // if (preferences.app.compact) {
@@ -16,7 +23,9 @@ const tokenTheme = computed(() => {
   // }
 
   return {
-    algorithm
+    algorithm,
+    token,
+    inherit: true
   }
 })
 </script>

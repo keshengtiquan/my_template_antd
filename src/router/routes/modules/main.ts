@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import("@/view/dashboard/dashboard.vue"),
         meta: {
           affixTab: true,
-          icon: "",
+          icon: "lucide:layout-dashboard",
           title: "工作台"
         }
       }

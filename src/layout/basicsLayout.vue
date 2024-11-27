@@ -1,9 +1,11 @@
 <template>
   <div class="flex h-full">
     <Sidebar />
-    <div class="flex-1 flex flex-col">
+    <div class="flex flex-col flex-1">
       <Header />
-      <div class="bg-[var(--main-bg)] flex-1"></div>
+      <div class="bg-[var(--main-bg)] flex-1">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
