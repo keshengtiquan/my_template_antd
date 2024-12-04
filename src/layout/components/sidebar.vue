@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-[var(--sidebar-width)] box-border">
     <div class="h-[var(--header-height)] title bg-[var(--bg-color)]">
       <div class="flex items-center h-full text-lg light">
         <a

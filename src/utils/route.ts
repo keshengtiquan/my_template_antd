@@ -109,3 +109,21 @@ export const searchTreeByTitle = (searchTerm: string, tree: RouteRecordRaw[]) =>
 
   return results
 }
+
+/**
+ * 打平树形结构
+ * @param tree
+ * @returns
+ */
+export const flatRouteTree = (tree: RouteRecordRaw[]) => {
+  const results: RouteRecordRaw[] = []
+  function dfs(node: RouteRecordRaw) {
+    results.push(node)
+    if (node.children && Array.isArray(node.children)) {
+      node.children.forEach((child: any) => dfs(child))
+    }
+  }
+  // 遍历根节点
+  tree.forEach((root) => dfs(root))
+  return results
+}

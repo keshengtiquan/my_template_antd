@@ -15,7 +15,7 @@ const routes: RouteRecordRaw[] = [
       {
         name: "Analyze",
         path: "/analyze",
-        component: () => import("@/view/dashboard/dashboard.vue"),
+        component: () => import("@/view/dashboard/analyze.vue"),
         meta: {
           affixTab: false,
           icon: "lucide:a-arrow-up",

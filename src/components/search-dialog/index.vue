@@ -1,9 +1,9 @@
 <template>
   <Teleport to="body">
-    <Transition name="fade" @after-leave="handleAfterLeave">
+    <Transition name="dialog-fade" @after-leave="handleAfterLeave">
       <div v-if="show" class="fixed bg-[#00000073] inset-0 z-[1000]"></div>
     </Transition>
-    <transition name="slide" @after-leave="handleAfterLeave">
+    <transition name="dialog-slide" @after-leave="handleAfterLeave">
       <div
         ref="dialogRef"
         v-if="show"

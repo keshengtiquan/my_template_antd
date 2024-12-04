@@ -1,29 +1,33 @@
 :root {
-    --bg-color: #fff;
-    --header-height: 50px;
-    --header-border-color: #e0e0e3;
-    --sidebar-width: 230px;
-    --menu-border-color: #e0e0e3;
-    --hover-bg: #f4f4f5;
-    /*字体灰色*/
-    --foreground: #71717a;
-    --foreground-50: #323639;
-    --bg-white: #ffffff;
-    --main-bg: #f1f3f6;
-    --icon-color: #56595b;
-    --icon-hover: #18181b;
+  --bg-color: #fff;
+  --header-height: 50px;
+  --header-border-color: #e0e0e3;
+  --sidebar-width: 230px;
+  --menu-border-color: #e0e0e3;
+  --hover-bg: #f4f4f5;
+  /*字体灰色*/
+  --foreground: #71717a;
+  --foreground-50: #323639;
+  --bg-white: #ffffff;
+  --main-bg: #f1f3f6;
+  --icon-color: #56595b;
+  --icon-hover: #18181b;
+  --tabs-view-height: 38px;
+  --tabs-border: #e4e4e7;
+  --tabs-bg-color: #d9e9fb;
+  --tabs-active-color: #006be6;
 }
 
 :root.dark {
-    --bg-color: #1d1d22;
-    --hover-bg: #2e3033;
-    --header-border-color: #36363a;
-    --menu-border-color: #36363a;
-    --main-bg: #14161a;
-    --icon-color: #c8c8c9;
-    --icon-hover: #fafafa;
-    --foreground-50: #f2f2f2;
+  --bg-color: #1d1d22;
+  --hover-bg: #2e3033;
+  --header-border-color: #36363a;
+  --menu-border-color: #36363a;
+  --main-bg: #14161a;
+  --icon-color: #c8c8c9;
+  --icon-hover: #fafafa;
+  --foreground-50: #f2f2f2;
+  --tabs-border: #36363a;
+  --tabs-active-color: #fafafa;
+  --tabs-bg-color: #2e3033;
 }
-
-
-
