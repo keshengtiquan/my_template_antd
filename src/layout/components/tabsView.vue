@@ -65,7 +65,9 @@
     </span>
   </div>
   <ContextMenu ref="contextMenuRef">
-    <div>右键菜单</div>
+    <div>
+      <div>关闭</div>
+    </div>
   </ContextMenu>
 </template>
 

@@ -1,53 +1,53 @@
 .breadcrumb-transition-enter-active {
-    transition:
-            transform 0.4s cubic-bezier(0.76, 0, 0.24, 1),
-            opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  transition:
+    transform 0.4s cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .breadcrumb-transition-leave-active {
-    display: none;
+  display: none;
 }
 
 .breadcrumb-transition-enter-from {
-    opacity: 0;
-    transform: translateX(30px) skewX(-30deg);
+  opacity: 0;
+  transform: translateX(30px) skewX(-30deg);
 }
 
 /* 对话框滑动动画 */
 .dialog-slide-enter-active {
-    transition:
-            transform 0.3s,
-            opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
 }
 .dialog-slide-leave-active {
-    transition:
-            transform 0.2s,
-            opacity 0.15s; /* 缩短关闭动画时间 */
+  transition:
+    transform 0.2s,
+    opacity 0.15s; /* 缩短关闭动画时间 */
 }
 .dialog-slide-enter-from {
-    transform: translateY(-20%);
-    opacity: 0;
+  transform: translateY(-20%);
+  opacity: 0;
 }
 .dialog-slide-enter-to {
-    transform: translateY(0);
-    opacity: 1;
+  transform: translateY(0);
+  opacity: 1;
 }
 .dialog-slide-leave-from {
-    transform: translateY(0);
-    opacity: 1;
+  transform: translateY(0);
+  opacity: 1;
 }
 .dialog-slide-leave-to {
-    transform: translateY(-20%);
-    opacity: 0;
+  transform: translateY(-20%);
+  opacity: 0;
 }
 
 .dialog-fade-enter-active,
 .dialog-fade-leave-active {
-    transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .dialog-fade-enter-from,
 .dialog-fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .slide-up-enter-active,
@@ -98,7 +98,7 @@
 .slide-right-enter-active,
 .slide-right-leave-active {
   transition: 0.25s cubic-bezier(0.25, 0.8, 0.5, 1);
-} 
+}
 
 .slide-right-move {
   transition: transform 0.3s;
@@ -192,4 +192,19 @@
 .fade-up-leave-to {
   opacity: 0;
   transform: translateY(-10%);
+}
+
+.context-menu-enter-active,
+.context-menu-leave-active {
+  transition: 0.1s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.context-menu-move {
+  transition: transform 0.1s;
+}
+
+.context-menu-enter-from,
+.context-menu-leave-to {
+  opacity: 0;
+  transform: translate(-15px);
 }

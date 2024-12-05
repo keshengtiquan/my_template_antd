@@ -1,12 +1,14 @@
 <template>
-  <div
-    v-if="visible"
-    ref="menuRef"
-    class="fixed shadow-md bg-[var(--bg-color)] p-1 border border-[var(--menu-border-color)] rounded-md"
-    :style="{ top: `${position.y}px`, left: `${position.x}px` }"
-  >
-    <slot />
-  </div>
+  <transition name="context-menu">
+    <div
+      v-if="visible"
+      ref="menuRef"
+      class="fixed shadow-md bg-[var(--bg-color)] p-1 border border-[var(--menu-border-color)] rounded-md"
+      :style="{ top: `${position.y}px`, left: `${position.x}px` }"
+    >
+      <slot />
+    </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
