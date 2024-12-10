@@ -1,4 +1,5 @@
 :root {
+  --popover-foreground: #020817;
   --bg-color: #fff;
   --header-height: 50px;
   --header-border-color: #e0e0e3;
@@ -19,6 +20,7 @@
 }
 
 :root.dark {
+  --popover-foreground: #f8fafc;
   --bg-color: #1d1d22;
   --hover-bg: #2e3033;
   --header-border-color: #36363a;

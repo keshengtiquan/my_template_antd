@@ -1,16 +1,16 @@
 <template>
-  <div class="w-[var(--sidebar-width)] box-border">
+  <div class="box-border">
     <div class="h-[var(--header-height)] title bg-[var(--bg-color)]">
       <div class="flex items-center h-full text-lg light">
         <a
-          class="flex text-[var(--foreground-50)] h-full items-center gap-2 overflow-hidden px-3 text-lg leading-normal transition-all duration-500"
+          class="flex text-[var(--foreground-50)] h-full whitespace-nowrap items-center gap-2 overflow-hidden px-3 text-lg leading-normal transition-all duration-500"
           >后台管理系统</a
         >
       </div>
     </div>
     <a-menu
       v-model:selectedKeys="state.selectedKeys"
-      style="width: var(--sidebar-width); height: calc(100% - var(--header-height))"
+      style="height: calc(100% - var(--header-height))"
       mode="inline"
       :open-keys="state.openKeys"
       :items="items"

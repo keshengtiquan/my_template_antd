@@ -33,11 +33,11 @@ import Search from "@/layout/components/search.vue"
 import Setting from "@/layout/components/setting.vue"
 import Dark from "@/layout/components/dark.vue"
 import Fullscreen from "@/layout/components/fullscreen.vue"
-import { useRoute, useRouter } from "vue-router"
-const router = useRouter()
-const route = useRoute()
+import { useTabsStore } from "@/store/modules/tabs"
+
+const tabStore = useTabsStore()
 const handleRefresh = () => {
-  router.replace(`/redirect/${encodeURIComponent(route.fullPath)}`)
+  tabStore.refresh()
 }
 const handleCollapse = () => {}
 </script>

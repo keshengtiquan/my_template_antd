@@ -206,5 +206,6 @@
 .context-menu-enter-from,
 .context-menu-leave-to {
   opacity: 0;
-  transform: translate(-15px);
+  /* transform: translate(-15px); */
+  transform: scale(0.5);
 }

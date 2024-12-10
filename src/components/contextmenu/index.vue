@@ -4,7 +4,7 @@
       v-if="visible"
       ref="menuRef"
       class="fixed shadow-md bg-[var(--bg-color)] p-1 border border-[var(--menu-border-color)] rounded-md"
-      :style="{ top: `${position.y}px`, left: `${position.x}px` }"
+      :style="menuStyle"
     >
       <slot />
     </div>
@@ -12,30 +12,56 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
+import { computed, nextTick, ref } from "vue"
 import { onClickOutside } from "@vueuse/core"
 const visible = ref(false)
-const position = ref({ x: 0, y: 0 })
 const menuRef = ref()
-const showMenu = (x: number, y: number) => {
-  position.value = { x, y }
+const menuW = ref(0)
+const menuH = ref(0)
+const mouseX = ref()
+const mouseY = ref()
+
+const menuStyle = computed(() => ({
+  top: `${pos.value.posY}px`,
+  left: `${pos.value.posX}px`
+}))
+
+const showMenu = async (x: number, y: number) => {
+  mouseX.value = x
+  mouseY.value = y
   visible.value = true
+  await nextTick()
+  const menuWidth = Math.max(menuRef.value?.offsetWidth || 0, 165)
+  const menuHeight = menuRef.value?.offsetHeight || 0
+  menuW.value = menuWidth
+  menuH.value = menuHeight
 }
-onClickOutside(menuRef, () => hideMenu())
+
+const pos = computed(() => {
+  let posX = mouseX.value
+  let posY = mouseY.value
+  // 宽度放不下生成新的位置
+  if (mouseX.value > window.innerWidth - menuW.value) {
+    posX = mouseX.value - menuW.value
+  }
+  // 高度放不下生成新的位置
+  if (mouseY.value > window.innerHeight - menuH.value) {
+    posY = window.innerHeight - menuH.value
+  }
+  return {
+    posX,
+    posY
+  }
+})
+
+onClickOutside(menuRef, () => {
+  hideMenu()
+})
 const hideMenu = () => {
   visible.value = false
 }
+
 defineExpose({ showMenu, hideMenu })
 </script>
 
-<style scoped>
-@keyframes enter {
-  0% {
-    opacity: 1; /* opacity:var(--tw-enter-opacity,1); */
-    transform: translateZ(0) scaleX(1) rotate(0);
-    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
-      scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
-      rotate(var(--tw-enter-rotate, 0));
-  }
-}
-</style>
+<style scoped></style>
