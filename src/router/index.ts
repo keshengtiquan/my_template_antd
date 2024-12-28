@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 import { routes } from "./routes"
 
-
 /**
  *  @zh_CN 创建vue-router实例
  */
@@ -22,4 +21,4 @@ const router = createRouter({
   // strict: true,
 })
 
-export { router }
+export default router

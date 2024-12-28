@@ -7,7 +7,7 @@ import CreatePlugins from "./src/config/plugins/index.ts"
 // https://vite.dev/config/
 export default ({ mode }: ConfigEnv): UserConfigExport => {
   const viteEnv = loadEnv(mode, process.cwd())
-  const { VITE_PUBLIC_PATH, VITE_PORT } = viteEnv
+  const { VITE_PUBLIC_PATH, VITE_PORT, VITE_BASE_PREFIX } = viteEnv
   console.log(VITE_PORT)
   return {
     base: VITE_PUBLIC_PATH,
@@ -18,7 +18,14 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
     },
     server: {
       port: Number(VITE_PORT),
-      proxy: {}
+      proxy: {
+        [VITE_BASE_PREFIX]: {
+          target: "http://127.0.0.1:48080",
+          ws: false,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(new RegExp(`^${VITE_BASE_PREFIX}`), "")
+        }
+      }
     },
     plugins: [
       vue(),

@@ -4,7 +4,7 @@
     <div class="flex flex-col justify-center items-center w-[35%] px-[100px]">
       <div class="mb-7 sm:mx-auto sm:w-full">
         <h2 class="mb-3 text-3xl font-bold leading-9 tracking-tight lg:text-4xl">欢迎回来</h2>
-        <p class="lg:text-md text-sm">
+        <p class="text-sm lg:text-md">
           <span>请输入您的帐户信息以开始管理您的项目</span>
         </p>
       </div>
@@ -37,7 +37,7 @@ const [Form] = useBasicsForm({
 async function onSubmit(value: { username: string; password: string }) {
   console.log(value)
   await userStore.authLogin(value)
-  await router.push("/index")
+  await router.push("/")
 }
 </script>
 

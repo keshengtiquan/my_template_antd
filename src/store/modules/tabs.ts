@@ -3,7 +3,7 @@ import { flatRouteTree } from "@/utils/route"
 import { defineStore } from "pinia"
 import { ref } from "vue"
 import { RouteRecordRaw } from "vue-router"
-import { router } from "@/router"
+import router from "@/router"
 import { startProgress, stopProgress } from "@/utils/nprogress"
 import { openRouteInNewWindow } from "@/utils/window"
 
