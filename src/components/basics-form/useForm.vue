@@ -32,7 +32,7 @@ const { schema, ...other } = defineProps<BasicsFormProps>()
 const formState = reactive<{ [key: string]: any }>({})
 const formRef = ref()
 schema?.forEach((item) => {
-  formState[item.name] = ""
+  formState[item.name] = item.componentProps.defaultValue ?? ""
 })
 
 const rulesRef = computed(() => {

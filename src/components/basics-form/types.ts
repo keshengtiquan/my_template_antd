@@ -39,6 +39,7 @@ export interface BasicsFormItemProps {
   component: string
   componentProps: any
   slots?: any
+  defaultValue?: any
 }
 
 export interface FormApi {
