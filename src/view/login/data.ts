@@ -3,14 +3,10 @@ import { BasicsFormItemProps } from "@/components/basics-form/types.ts"
 export const formSchema: BasicsFormItemProps[] = [
   {
     component: "Input",
-    componentProps: { placeholder: "请输入公司名", size: "large", defaultValue: "芋道源码" },
-    name: "tenantName"
-  },
-  {
-    component: "Input",
     componentProps: {
       placeholder: "请输入用户名",
-      size: "large"
+      size: "large",
+      defaultValue: "admin"
     },
     name: "username",
     slots: { prefix: "uNamePrefix" }
@@ -19,7 +15,8 @@ export const formSchema: BasicsFormItemProps[] = [
     component: "InputPassword",
     componentProps: {
       placeholder: "请输入密码",
-      size: "large"
+      size: "large",
+      defaultValue: "admin123"
     },
     name: "password",
     slots: { prefix: "pwdPrefix" }

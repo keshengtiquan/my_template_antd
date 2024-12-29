@@ -20,11 +20,12 @@
 <script setup lang="ts">
 import { useBasicsForm } from "@/components/basics-form"
 import { formSchema } from "@/view/login/data.ts"
-import { useUserStore } from "@/store/modules/user.ts"
 import { useRouter } from "vue-router"
+import { LoginParams } from "@/api/login/types"
+import { useAuthStore } from "@/store/modules/auth"
 
 const router = useRouter()
-const userStore = useUserStore()
+const authStore = useAuthStore()
 const [Form] = useBasicsForm({
   onFinish: onSubmit,
   schema: formSchema,
@@ -34,9 +35,9 @@ const [Form] = useBasicsForm({
   }
 })
 
-async function onSubmit(value: { username: string; password: string }) {
+async function onSubmit(value: LoginParams) {
   console.log(value)
-  await userStore.authLogin(value)
+  await authStore.authLogin(value)
   await router.push("/")
 }
 </script>

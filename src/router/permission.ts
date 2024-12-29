@@ -1,11 +1,11 @@
 import router from "@/router"
-import { getToken } from "@/utils/token"
+import { getAccessToken } from "@/utils/token"
 
 const whiteList = ["/login"]
 
-router.beforeEach((to, from, next) => {
-  const token = getToken()
-  if (token) {
+router.beforeEach((to, _, next) => {
+  const accessToken = getAccessToken()
+  if (accessToken) {
     if (to.path === "/login") {
       next({ path: "/" })
     } else {
